@@ -1,0 +1,92 @@
+{
+  "name": "eurynome-client",
+  "version": "0.0.1",
+  "description": "Electron client for euryno.me built with Mithril",
+  "author": "Andrew Zigler <andrewzigler@gmail.com> (https://www.andrewzigler.com)",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run build:scss && npm run build:babel && electron . & npm run watch",
+    "watch": "npm run watch:scss & npm run watch:babel",
+    "build": "npm run clean && electron-builder . --dir",
+    "build:mw": "npm run lint && npm run clean && electron-builder . -mw",
+    "clean": "rm -rf min && npm run build:babel && npm run build:scss && npm run build:babel && rm -rf dist",
+    "lint": "eslint . --ext .js --fix --ignore-pattern 'min/**' --ignore-pattern 'dist/**'",
+    "build:scss": "node-sass ./build/scss/ -o ./min/css --output-style='compressed'",
+    "watch:scss": "node-sass ./build/scss/ -o ./min/css -w",
+    "build:babel": "babel ./build/component --out-dir ./min/component && npm run uglify:babel",
+    "watch:babel": "babel ./build/component --out-dir ./min/component --watch",
+    "uglify:babel": "uglifyjs-folder ./min/component -yeo ./min/component --pattern '**/*.js' --x '.js'"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "construct-ui": "^0.2.4",
+    "electron-store": "^5.1.1",
+    "mithril": "^2.0.4",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/preset-env": "^7.9.6",
+    "electron": "^8.2.5",
+    "electron-builder": "^22.6.0",
+    "electron-reload": "^1.5.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-standard": "^4.0.1",
+    "mithril-template-builder": "^1.3.0",
+    "node-sass": "^4.14.0",
+    "standard": "^14.3.3",
+    "uglifyjs-folder": "^1.5.4"
+  },
+  "build": {
+    "appId": "me.euryno.client",
+    "productName": "euryno.me",
+    "copyright": "© 2020 Andrew Zigler",
+    "files": ["**/*", "build/icon.png"],
+    "mac": {
+      "category": "public.app-category.games",
+      "target": "zip"
+    },
+    "win": {
+      "target": "zip"
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragma": "m",
+          "pragmaFrag": "'['"
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "extends": [
+      "standard",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "standard"
+    ],
+    "rules": {
+      "no-console": 0,
+      "react/display-name": 0,
+      "react/no-unknown-property": 0,
+      "react/react-in-jsx-scope": 0
+    }
+  }
+}

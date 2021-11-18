@@ -1,0 +1,62 @@
+#AppHeader {
+  border-bottom: 0.5rem double #5f318a;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding-left: 0.5rem;
+  margin-right: 0.6rem;
+
+  h1 {
+    font-family: 'Pixelated Eight';
+    margin: 0;
+    user-select: none;
+  }
+
+  h2 {
+    font-family: 'Pixelated Six';
+    margin: 0;
+    padding-left: 2.5rem;
+    font-size: 0.8rem;
+  }
+
+  .client-details {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 24rem;
+    align-self: flex-end;
+    flex-direction: row-reverse;
+    width: 11rem;
+    margin-right: 1rem;
+
+    h2 {
+      user-select: none;
+      font-size: 0.7em;
+      margin-bottom: 0.2rem;
+      padding-top: 0.4rem;
+      color: #808080;
+    }
+  }
+
+  .creator h2 {
+    color: #1383a5;
+  }
+
+  img{
+    &.twitter {
+      width: 2.5rem;
+      display: inline-flex;
+      vertical-align: middle;
+    }
+
+    &.discord {
+      width: 4rem;
+      position: absolute;
+      top: 0.1rem;
+    }
+
+    &.planet {
+      width: 4rem;
+      margin-right: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'Pixelated Eight';
+  src: url('./../../asset/font/pixelated-eight.ttf');
+}
+@font-face {
+  font-family: 'Pixelated Six';
+  src: url('./../../asset/font/pixelated-six.ttf');
+}
+@import './../../node_modules/construct-ui/lib/index.css';
+
+html {
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 0.5rem;
+  height: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.2rem;
+  background-color: #5f318a99;
+}
+
+html,
+body,
+#eurynome,
+#App,
+#AppRouter,
+#RouteWorld {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pixelated Eight';
+  visibility: visible!important;
+}
+
+.cui-overlay {
+  height: 100vh;
+  display: flex;
+}
+
+#App {
+  a {
+    color: #1383a5;
+    display: inline-block;
+    text-decoration: none;
+
+    &[disabled] {
+      color: initial;
+      background: #dedede;
+
+      &:hover {
+        cursor: default!important;
+        opacity: initial;
+      }
+    }
+
+    &:hover {
+      opacity: 0.8;
+
+      img {
+        opacity: 0.8 !important;
+      }
+    }
+  }
+
+  img {
+    image-rendering: pixelated;
+  }
+
+  #RouteWorld {
+    flex-direction: row;
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 0 auto;
+      flex-grow: 1;
+  
+      .cui-card {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .cui-card {
+    overflow-y: scroll;
+    border-style: groove;
+    color: #37474f;
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 0.3rem;
+    }
+  }
+
+  .eu-route,
+  .eu-select {
+    flex: inherit;
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: center;
+    padding-top: 1rem;
+
+    .GridCard {
+      justify-content: center;
+    }
+
+    h3 {
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .option {
+      text-transform: capitalize;
+
+      &.new-char {
+        text-transform: initial;
+      }
+    }
+  }
+
+  .CardConnected {
+    span {
+      text-decoration: underline;
+    }
+
+    .cui-card {
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-inline-start: 0;
+
+      li {
+        list-style: none;
+        font-style: italic;
+        font-size: 12px;
+        display: inline-flex;
+        padding-right: 0.8rem;
+  
+        &:nth-child(even) {
+          color: gray;
+        }
+      }
+    }
+  }
+
+  button.back {
+    width: 6rem;
+    align-self: center;
+  }
+}

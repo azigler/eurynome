@@ -1,0 +1,54 @@
+#WorldSidebar {
+  height: 100%;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  box-shadow: 3px 20px 20px 6px #b1b1b1;
+  background-color: #ded6e0;
+  transition: margin-left 0.5s;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #5f318a;
+
+  &.hidden {
+    margin-left: -19rem;
+
+    .cui-icon {
+      padding-left: 1px;
+      padding-right: initial;
+    }
+  }
+
+  .sidebar-top {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      text-decoration: underline;
+      text-decoration-style: dashed;
+    }
+  }
+
+  .cui-icon {
+    align-self: flex-end;
+    border-radius: 4px;
+    background-color: white;
+    color: #5f318a;
+    margin-bottom: 3px;
+    margin-top: -4px;
+    border: 1px solid;
+    padding-right: 1px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.toggled {
+      background-color: #f4d3ff;
+      box-shadow: inset -1px -1px 1px 0px #5f318a;
+    }
+
+    svg {
+      stroke-width: 4px;
+    }
+  }
+}

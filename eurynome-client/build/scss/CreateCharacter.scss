@@ -1,0 +1,38 @@
+#CreateCharacter {
+  flex: inherit;
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+  justify-content: center;
+
+  .cui-card {
+    max-width: 23.5rem;
+  }
+
+  .cui-form-group {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+
+    &.error {
+      margin-bottom: 0;
+      margin-top: 0.3rem;
+
+      .error-message {
+        font-size: 0.5rem;
+        color: #dd7000;
+        display: flex;
+        align-self: center;
+        min-height: 12px;
+      }
+    }
+
+    &.button-holder {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "eurynome-server",
+  "version": "1.0.0",
+  "description": "Socket.IO server for euryno.me",
+  "author": "Andrew Zigler <andrewzigler@gmail.com> (https://www.andrewzigler.com)",
+  "main": "index.js",
+  "scripts": {
+    "tunnel": "ssh -o ExitOnForwardFailure=yes -f -N -L 5984:127.0.0.1:5984 root@138.68.247.173 || exit 0",
+    "start": "node index",
+    "dev": "npm run tunnel && nodemon index",
+    "dev:loop": "npm run tunnel && nodemon index --looping",
+    "lint": "eslint . --ext .js --fix"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pouchdb": "^7.2.1",
+    "socket.io": "^2.3.0",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-standard": "^4.0.1",
+    "standard": "^14.3.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "extends": [
+      "standard"
+    ],
+    "plugins": [
+      "standard"
+    ],
+    "rules": {
+      "no-console": 0
+    }
+  }
+}

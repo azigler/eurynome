@@ -1,0 +1,42 @@
+#RouteSplash {
+  .client-status{
+    transition: color 1s;
+    padding-top: 0.1rem;
+
+    &.connected {
+      color: coral;
+    }
+    &.recognized {
+      color: green;
+    }
+    &.disconnected {
+      color: darkred;
+    }
+  }
+
+  .cui-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    height: 9.5rem;
+    justify-content: space-around;
+    padding-bottom: 0;
+    width: 22rem;
+    margin-bottom: 0.5rem;
+
+    &.connection-log {
+      display: block;
+      height: 12.5rem;
+
+      pre {
+        white-space: pre-wrap;
+        text-align: left;
+        font-family: 'Pixelated Six';
+        font-size: 0.6rem;
+        background: initial;
+        border: initial;
+      }
+    }
+  }
+}

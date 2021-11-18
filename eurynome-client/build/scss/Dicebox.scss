@@ -1,0 +1,51 @@
+.Dicebox {
+  button.launch {
+    display: flex;
+    margin: 0 auto;
+    font-family: 'Pixelated Six';
+  }
+}
+
+.Dicebox.cui-card {
+  position: relative;
+  z-index: 100;
+  margin: 0 auto;
+  align-self: center;
+  min-width: 25rem;
+  display: flex;
+  flex-direction: column;
+
+  button.coin-flip {
+    width: 5rem;
+    padding: 2px;
+    align-self: flex-end;
+    position: absolute;
+    top: 20.5rem;
+
+    .cui-icon-circle {
+      margin-right: 3px;
+    }
+
+    .cui-button-label {
+      font-size: 6px;
+    }
+  }
+
+  .dice-log {
+    height: 19rem;
+    overflow: scroll;
+    background: #f5f5f5;
+    padding: 0 0.4rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+  }
+
+  label {
+    padding-bottom: 0.3rem;
+  }
+
+  .cui-radio-group {
+    margin-left: 1rem;
+    margin-bottom: 0.75rem;
+  }
+}

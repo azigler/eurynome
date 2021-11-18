@@ -1,0 +1,15 @@
+#WorldDebugMain {
+  #WorldDebugCounter {
+    text-align: center;
+    height: 12rem;
+    justify-content: space-evenly;
+  }
+
+  .scenes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
